@@ -1,3 +1,18 @@
+:root {
+  --bg: #000a04;
+  --surface: #101a13;
+  --surface-soft: rgba(255, 255, 255, 0.05);
+  --text: #d7ddd4;
+  --muted: #8d9284;
+  --green: #5a7863;
+  --gold: #c5a880;
+  --radius: 20px;
+  --section-x: clamp(24px, 8vw, 200px);
+}
+
+
+
+
 /* Reset Styles */
 
 * {
@@ -306,15 +321,23 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    background: transparent;
     gap: 50px;
     width: 300px;
     height: 380px;
     text-align: center;
     color: #8d9284;
-    box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, 1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Card Styles */
+.card {
+  background: var(--surface-soft);
+  background: transparent;
+  border: 1px solid rgba(197, 168, 128, 0.18);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
 
 .card:hover {
     transform: translateY(-10px);
@@ -327,7 +350,7 @@ header {
     color: #8d9284;
     background-color: #35473a;
     padding: 20px;
-    border-radius: 2cap;
+    border-radius: var(--radius);
 }
 
 .card p {
@@ -347,7 +370,7 @@ header {
     background-color: #8d9284;
     color: #000a04;
     text-decoration: none;
-    border-radius: 2cap;
+    border-radius: var(--radius);
     transition: background-color 0.3s ease;
 }
 
@@ -448,7 +471,7 @@ header {
   width: 100%;
   padding: 15px 18px;
   border: none;
-  border-radius: 3cap;
+  border-radius: var(--radius);
   background: #c5a880;
   color: #050505;
   font-family: "Bungee", sans-serif;

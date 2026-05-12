@@ -49,4 +49,4 @@ These adjust the navigation, hero images, about layout, service cards, and conta
 
 ## Author
 
-Fadi Kazaan
+shady-web-design
