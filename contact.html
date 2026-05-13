@@ -9,7 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee&family=Caveat:wght@400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Contact - Fadi Kazaan</title>
 
-    <script>
+
+
+
+</head>
+
+<script>
   const form = document.getElementById("contactForm");
 
   form.addEventListener("submit", async function (event) {
@@ -17,7 +22,7 @@
 
     const formData = new FormData(form);
 
-    const response = await fetch("https://YOUR-VERCEL-APP.vercel.app/api/contact", {
+    const response = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -39,8 +44,6 @@
   });
 </script>
 
-
-</head>
 <body class="contact-page">
 
     
