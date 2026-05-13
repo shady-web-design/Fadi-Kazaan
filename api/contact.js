@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      from: "Fadi Website <onboarding@resend.dev>",
+      from: "Fadi Website <booking@fadi-kazaan.com>",
       to: [process.env.CONTACT_EMAIL],
       reply_to: email,
       subject: "New contact form message",

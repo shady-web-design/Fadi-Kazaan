@@ -890,6 +890,22 @@ footer p {
 }
 
 @media (max-width: 640px) {
+
+    header {
+        min-height: 90vh;
+    }
+
+    .profile-top {
+        inset: 0;
+        height: 100%;
+        bottom: 10px;
+
+    }
+
+    .sweep-up {
+        bottom: 28px;
+    }
+
     .main-container {
         grid-template-areas:
             "main-header"
@@ -930,16 +946,13 @@ footer p {
         transform: scale(1.12);
     }
 
-    header {
-        min-height: 82vh;
-    }
 
     .profile-top {
         padding-top: 30px;
     }
 
     .profile-img {
-        width: min(420px, 95vw);
+        width: min(450px, 110vw);
     }
 
     .logo {
