@@ -14,35 +14,6 @@
 
 </head>
 
-<script>
-  const form = document.getElementById("contactForm");
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const formData = new FormData(form);
-
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: formData.get("name"),
-        phone: formData.get("phone"),
-        email: formData.get("email"),
-        message: formData.get("message")
-      })
-    });
-
-    if (response.ok) {
-      alert("Message sent successfully!");
-      form.reset();
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-  });
-</script>
 
 <body class="contact-page">
 
@@ -103,6 +74,36 @@
     <footer>
                 <p>&copy; 2026 Fadi Kazaan. All rights reserved.</p>
     </footer>
-    
+    <script>
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: formData.get("name"),
+            phone: formData.get("phone"),
+            email: formData.get("email"),
+            message: formData.get("message")
+          })
+        });
+
+        if (response.ok) {
+          alert("Message sent successfully!");
+          form.reset();
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      });
+    </script>
+</body>
+  
 </body>
 </html>
