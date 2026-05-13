@@ -7,9 +7,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee&family=Caveat:wght@400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Contact - Fadi Kazaan</title>
+
+    <script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    const response = await fetch("https://YOUR-VERCEL-APP.vercel.app/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        email: formData.get("email"),
+        message: formData.get("message")
+      })
+    });
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
+
+
 </head>
-<body>
+<body class="contact-page">
 
     
     <nav>
@@ -19,30 +51,55 @@
         <a href="/contact.html">Contact</a>
     </nav>
     
-    <div class="customer-entrance">
+    <div class="main">
+
+        <div class="customer-entrance">
 
             <h2>Get In Touch</h2>
             <p>Put your contact information here.</p>
 
-                        <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                        <form class="contact-form"  id="contactForm">
                             <div class="form-row">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name">
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="phone">Phone Nr</label>
+                                <input type="tel" id="phone" name="phone" placeholder="your phone number" required>
                             </div>
 
                             <div class="form-row">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com">
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
                             </div>
 
                             <div class="form-row">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Write your message"></textarea>
+                                <textarea id="message" name="message" placeholder="Write your message" required></textarea>
                             </div>
 
                             <button type="submit">Send Message</button>
                         </form>
         </div>
+
+        <div class="social-media">
+                        <img src="img/Logo.png" alt="Barber Tools">
+                        <img class="contact-media-img" src="img/Fadi-about.png" alt="fadi kazaan">
+                        <div class="social-icons">
+                            <h2>Follow Me</h2>
+                            <a href="https://www.instagram.com/fadikazaan/?hl=de"><img src="icones/instagram.png" alt="Instagram"></a>
+                            <a href="https://wa.me/971501249579" aria-label="WhatsApp"><img src="icones/whatsapp.png" alt="WhatsApp"></a>
+                        </div>
+        </div>
+
+
+    </div>
+    
+
+    <footer>
+                <p>&copy; 2026 Fadi Kazaan. All rights reserved.</p>
+    </footer>
     
 </body>
 </html>

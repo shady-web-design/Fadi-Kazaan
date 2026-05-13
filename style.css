@@ -75,6 +75,10 @@ a:hover {
   color: #C5A880;
 }
 
+
+
+
+
 /* Navigation Bar Styles */
 
 
@@ -354,7 +358,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin: 80px 0px;
 }
 
 .services-content a {
@@ -378,6 +382,7 @@ header {
     font-weight: 500;
     background: var(--muted);
     transform: translateY(-3px);
+    animation: none;
 }
 
 
@@ -453,6 +458,7 @@ header {
     grid-area: contact-content;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
+    padding-bottom: 80px;
 }
 
 
@@ -493,86 +499,7 @@ header {
 
 
 
-.customer-entrance {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    align-items: center;
-    min-width: 550px;
-    width: min(100%, 620px);
-    margin: 0 auto;
-    gap: 20px;
-    background: transparent;
-  backdrop-filter: blur(8px);
-}
 
-.contact-form {
-  width: min(90%, 520px);
-  margin: 0 auto;
-  padding: 32px;
-  color: #8d9284;
-  background: transparent;
-}
-
-.form-row {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.form-row label {
-  margin-bottom: 8px;
-  font-family: "Work Sans", sans-serif;
-  color: #c5a880;
-  font-size: 14px;
-    background: transparent;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid rgba(230, 230, 230, 0.2);
-  background: rgba(255, 255, 255, 0.04);
-  color: #e6e6e6;
-  font-family: "Work Sans", sans-serif;
-  font-size: 16px;
-  outline: none;
-    background: transparent;
-}
-
-.form-row textarea {
-  min-height: 140px;
-  resize: vertical;
-    background: transparent;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: #c5a880;
-  background: rgba(255, 255, 255, 0.07);
-    background: transparent;
-}
-
-.contact-form button {
-  width: 100%;
-  padding: 15px 18px;
-  border: none;
-  border-radius: var(--radius);
-  background: #c5a880;
-  color: #050505;
-  font-family: "Bungee", sans-serif;
-  font-size: 15px;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: #e0c49a;
-  transform: translateY(-3px);
-}
 
 
 
@@ -639,9 +566,198 @@ footer {
     font-size: 14px;
     position: relative;
     z-index: 20;
-    padding-top: 80px;
     grid-area: footer;
 }
+
+footer p {
+    text-decoration: none;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+
+
+
+
+
+
+/********************** contact page global styles *************************/
+
+.contact-page .main,
+.contact-page .customer-entrance,
+.contact-page .social-media,
+.contact-page footer,
+.contact-page .social-icons,
+.contact-page .social-icons a,
+.contact-page .social-icons img,
+.contact-page h2,
+.contact-page .form-row,
+.contact-page p{
+    background: transparent;
+}
+
+
+
+.contact-page {
+    background:
+        linear-gradient(rgba(0, 10, 4, 0.75), rgba(0, 10, 4, 1.75)),
+        url("img/bg/bg1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+
+
+.contact-page .main {
+    padding: 20px clamp(24px, 7vw, 100px);
+    min-height:0;
+    scroll-margin-top: 110px;
+}
+
+
+.contact-page .main {
+    display: grid;
+    grid-template-areas:
+        "customer-entrance social-media"
+        "contact-form social-media";
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+
+.contact-page .contact-media-img {
+    width: 250px;
+    background: transparent;    
+    border-bottom: 1px solid transparent;
+}
+
+.contact-page .social-media{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: transparent;
+}
+
+.contact-page .social-icons,
+.contact-page .social-icons a,
+.contact-page .social-icons img,
+.contact-page h2{
+    
+    background: transparent;
+}
+
+
+/* Get in Touch Section Styles */
+
+.customer-entrance {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    align-items: center;
+    min-width: 550px;
+    width: min(100%, 620px);
+    margin: 0 auto;
+    gap: 10px;
+    background: transparent;
+    /*backdrop-filter: blur(8px);*/
+}
+
+.customer-entrance h2 {
+    font-size: 36px;
+    color: var(--text);
+    background: transparent;
+}
+
+.contact-form {
+  width: min(90%, 520px);
+  margin: 0 auto;
+  padding: 32px;
+  color: var(--muted);
+  background: transparent;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  margin-bottom: 8px;
+  font-family: "Work Sans", sans-serif;
+  color: var(--text);
+  font-size: 14px;
+  background: transparent;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(230, 230, 230, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e6e6e6;
+  font-family: "Work Sans", sans-serif;backdrop-filter: blur(28px);
+  font-size: 16px;
+  outline: none;
+    background: transparent;
+}
+
+.form-row textarea {
+  min-height: 140px;
+  resize: vertical;
+    background: transparent;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: #c5a880;
+  background: rgba(255, 255, 255, 0.07);
+    background: transparent;
+}
+
+.contact-form button {
+    width: 100%;
+    display: inline-block;
+    padding: 5px 88px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: pulse 1.8s infinite;
+}
+
+.contact-form button:hover {
+    color: var(--surface);
+    font-size: 20px;
+    font-weight: 500;
+    background: var(--muted);
+    transform: translateY(-3px);
+    animation: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Animations */
