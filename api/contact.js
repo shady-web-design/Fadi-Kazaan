@@ -31,13 +31,18 @@ export default async function handler(req, res) {
     })
   });
 
+  const resendResult = await response.text();
+
   if (!response.ok) {
-    return res.status(500).json({ error: "Email failed" });
+    console.error("Resend error:", response.status, resendResult);
+    return res.status(500).json({
+      error: "Email failed",
+      details: resendResult
+    });
   }
 
   return res.status(200).json({ success: true });
 }
-
 
 
 /*    re_aRVEMUPJ_4MmoJWWoeFUvfBmXwSrazM3z   */
