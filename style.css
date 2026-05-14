@@ -239,17 +239,37 @@ header {
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease;
-  animation: pulse 1.8s infinite;
-    background: transparent;
+  animation: sweepPulse 1.8s infinite;
+  background: transparent;
+  transform: rotate(180deg);
+}
+
+.sweep-up img.point-up {
+  transform: rotate(0deg);
 }
 
 .sweep-up img:hover {
-  transform: translateY(-10px);
+  transform: rotate(180deg) translateY(-10px);
 }
 
-.sweep-up img.rotate {
-    transform: rotate(180deg);
+.sweep-up img.point-up:hover {
+  transform: rotate(0deg) translateY(-10px);
 }
+
+@keyframes sweepPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 14px rgba(197, 168, 128, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(197, 168, 128, 0);
+    }
+}
+
 
 
 

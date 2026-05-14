@@ -159,19 +159,23 @@
   });
   const sweepButton = document.getElementById("sweepButton");
   const sweepIcon = document.getElementById("sweepIcon");
-  const aboutSection = document.getElementById("about");
+  const homeSection = document.getElementById("home");
 
-  window.addEventListener("scroll", function () {
-    const aboutTop = aboutSection.offsetTop;
+  function updateSweepButton() {
+    const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
 
-    if (window.scrollY >= aboutTop - 120) {
-      sweepButton.href = "#home";
-      sweepIcon.classList.add("rotate");
-    } else {
+    if (window.scrollY < homeBottom - 120) {
       sweepButton.href = "#about";
-      sweepIcon.classList.remove("rotate");
+      sweepIcon.classList.remove("point-up");
+    } else {
+      sweepButton.href = "#home";
+      sweepIcon.classList.add("point-up");
     }
-  });
+  }
+
+  updateSweepButton();
+  window.addEventListener("scroll", updateSweepButton);
+
 </script>
 </body>
     </html>
