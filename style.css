@@ -1139,7 +1139,7 @@ footer p {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
    
 /* navbar phone edition */
     nav {
@@ -1435,7 +1435,7 @@ footer p {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
     
     /* navbar phone edition */
     nav {
