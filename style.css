@@ -87,7 +87,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
     width: 100%;
     padding: 30px 50px;
     position: sticky;
@@ -97,7 +96,16 @@ nav {
     backdrop-filter: blur(3px);
 }
 
-nav a {
+
+.nav-links {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links  a {
     background: transparent;
     font-style: normal;
     font-size: 18px;
@@ -106,9 +114,25 @@ nav a {
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+
+.nav-booking-btn {
+    display: none;
+}
+
+.nav-links  a:hover {
     color: #C5A880;
     transform: scale(1.5);
+}
+
+
+.menu-btn {
+  display: none;
+  background: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 
@@ -637,6 +661,15 @@ footer p {
 }
 
 
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
 
 .contact-page .main {
     padding: 20px clamp(24px, 7vw, 100px);
@@ -860,11 +893,11 @@ footer p {
     }
 
     .profile-img {
-        width: min(890px, 130vw);
+        width: min(690px, 130vw);
     }
 
     .logo {
-        width: 190px;
+        width: 120px;
     }
 
     .about-content,
@@ -963,12 +996,11 @@ footer p {
     }
 
     nav {
-        gap: 14px;
         padding: 18px 14px;
         flex-wrap: wrap;
     }
 
-    nav a {
+    .nav-links a {
         font-size: 13px;
     }
 
@@ -992,8 +1024,11 @@ footer p {
         padding-bottom: 12px;
     }
 
-    .sweep-up img {
-        width: 48px;
+    #sweepIcon {
+        width: 72px;
+        box-shadow:
+            0 0 10px 2px #bacbcb,
+            0 0 24px 6px rgba(255, 255, 255, 0.65);
     }
 
     h2 {
@@ -1105,14 +1140,86 @@ footer p {
 }
 
 @media (max-width: 420px) {
+   
+/* navbar phone edition */
     nav {
-        gap: 10px;
-        padding: 14px 10px;
+        padding: 10px 18px;
+    }
+    .phone-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: transparent;
+   }
+     .nav-links a {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
 
-    nav a {
-        font-size: 11px;
+    .nav-booking-btn {
+        text-decoration: none;
+        background: transparent;
+        background: none;
+        border: 1px solid var(--text);
+        border-radius: var(--radius);
+        color: var(--text);
+        font-size: 15px;
+        font-weight: 400;
+        cursor: pointer;
+        padding: 0px 16px;
     }
+
+    .nav-booking-btn:hover {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.2);
+        border-color: var(--text);
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    nav.show {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        background-color: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+    }
+
+    nav.show a {
+        display: block;
+    }
+
+    nav.show .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  }
+
+
+    nav.show .phone-bar{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        gap: 20px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    .nav-booking-btn {
+        display: block;
+    }
+
+
+    /***************/
+
 
     
     header {
@@ -1127,6 +1234,13 @@ footer p {
 
     .sweep-up{
         bottom: 0px;
+    }
+
+    #sweepIcon {
+        width: 72px;
+        box-shadow:
+            0 0 10px 2px #bacbcb,
+            0 0 24px 6px rgba(255, 255, 255, 0.65);
     }
    
 
@@ -1156,21 +1270,34 @@ footer p {
         height: 44px;
     }
 
+    .business-hours {
+        gap: 30px;
+        text-align: center;
+    }
+
     .business-hours td {
         display: block;
         padding: 6px 0;
         border-bottom: 0;
+        text-align: center;
     }
 
     .business-hours tr {
         display: block;
         padding: 12px 0;
+        text-align: center;
         border-bottom: 1px solid rgba(197, 168, 128, 0.18);
     }
 
     .business-hours td:last-child {
-        text-align: left;
+        text-align: center;
     }
+
+    footer {
+        padding: 30px 18px;
+    }
+
+
 }
 
 
@@ -1179,6 +1306,42 @@ footer p {
 
 
 /* media queries - for contact page */
+
+
+@media (max-width: 1024px) {
+  .contact-page {
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+
+
+@media (max-width: 680px) {
+  .contact-page {
+    background-image: none;
+    position: relative;
+    overflow-x: hidden;
+  }
+   .contact-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(rgba(0, 10, 4, 0.75), rgba(0, 10, 4, 1.75)),
+        url("img/bg/bg1.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+
+
+
+
+
+
 
 
 @media (max-width: 900px) {
@@ -1199,6 +1362,7 @@ footer p {
 
     .contact-page .contact-form {
         width: min(100%, 520px);
+        padding: none;
     }
 
     .contact-page .social-media {
@@ -1269,4 +1433,86 @@ footer p {
     .contact-page .contact-media-img {
         width: min(220px, 80vw);
     }
+}
+
+@media (max-width: 420px) {
+    
+    /* navbar phone edition */
+    nav {
+        padding: 10px 18px;
+    }
+    .phone-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: transparent;
+   }
+     .nav-links a {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-booking-btn {
+        text-decoration: none;
+        background: transparent;
+        background: none;
+        border: 1px solid var(--text);
+        border-radius: var(--radius);
+        color: var(--text);
+        font-size: 15px;
+        font-weight: 400;
+        cursor: pointer;
+        padding: 0px 16px;
+    }
+
+    .nav-booking-btn:hover {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.2);
+        border-color: var(--text);
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    nav.show {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        background-color: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+    }
+
+    nav.show a {
+        display: block;
+    }
+
+    nav.show .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  }
+
+
+    nav.show .phone-bar{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        gap: 20px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    .nav-booking-btn {
+        display: block;
+    }
+
+
+    /***************/
 }

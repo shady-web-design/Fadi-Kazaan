@@ -18,11 +18,18 @@
 <body class="contact-page">
 
     
+    
     <nav>
-        <a href="./index.html">Home</a>
-        <a href="./index.html#about">About</a>
-        <a href="./index.html#services">Services</a>
-        <a href="./contact.html">Contact</a>
+        <div class="phone-bar">
+          <a class="nav-booking-btn" href="./contact.html">Book Now</a>
+          <button class="menu-btn">☰</button>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html#home">Home</a>
+            <a href="./index.html#about">About</a>
+            <a href="./index.html#services">Services</a>
+            <a href="./contact.html">Contact</a>
+        </div>
     </nav>
     
     <div class="main">
@@ -102,6 +109,14 @@
           alert("Something went wrong. Please try again.");
         }
       });
+
+      const menuBtn = document.querySelector(".menu-btn");
+      const nav = document.querySelector("nav");
+
+      menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+
     </script>
 </body>
   
