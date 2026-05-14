@@ -154,7 +154,7 @@ header {
 
 
 .profile-img {
-    width: 700px;
+    width: calc(min(850px, 95svh));
 }
 
 .logo {
@@ -217,33 +217,39 @@ header {
 /* Sweep Up Section Styles */
 
 .sweep-up {
-  position: absolute;
-  padding: 20px 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-  text-align: center;
+    position: fixed;
+    padding: 30px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+    background: transparent;
 }
 
 
 .sweep-up a {
   display: inline-block;
+    background: transparent;
 }
 
 .sweep-up img {
-  width: 60px;
+  width: 80px;
   height: auto;
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease;
   animation: pulse 1.8s infinite;
+    background: transparent;
 }
 
 .sweep-up img:hover {
   transform: translateY(-10px);
 }
 
+.sweep-up img.rotate {
+    transform: rotate(180deg);
+}
 
 
 
@@ -822,7 +828,11 @@ footer p {
     }
 
     header {
-        min-height: 88vh;
+        min-height: 98vh;
+    }
+
+    .sweep-up img {
+        width: 60px;
     }
 
     .profile-top {
@@ -830,7 +840,7 @@ footer p {
     }
 
     .profile-img {
-        width: min(620px, 78vw);
+        width: min(890px, 130vw);
     }
 
     .logo {
@@ -892,7 +902,7 @@ footer p {
 @media (max-width: 640px) {
 
     header {
-        min-height: 90vh;
+        min-height: 100vh;
     }
 
     .profile-top {
@@ -903,7 +913,7 @@ footer p {
     }
 
     .sweep-up {
-        bottom: 28px;
+        bottom: -10px;
     }
 
     .main-container {
@@ -947,12 +957,11 @@ footer p {
     }
 
 
-    .profile-top {
-        padding-top: 30px;
-    }
+   
 
     .profile-img {
-        width: min(450px, 110vw);
+        width: min(650px, 160vw);
+        bottom: -40px ;
     }
 
     .logo {
@@ -1085,12 +1094,25 @@ footer p {
         font-size: 11px;
     }
 
-    .profile-top {
-        padding-top: 18px;
+    
+    header {
+        min-height: 93vh;
     }
 
+    .profile-top {
+        inset: 0;
+        height: 100%;
+
+    }
+
+    .sweep-up{
+        bottom: 0px;
+    }
+   
+
     .profile-img {
-        width: min(520px, 122vw);
+        width: min(720px, 152vw);
+        bottom: -80px;
     }
 
     .logo {

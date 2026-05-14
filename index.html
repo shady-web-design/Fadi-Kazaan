@@ -30,7 +30,9 @@
             <img class="profile-img" src="img/Fadi 2.png" alt="Fadi Kazaan">
         </div>
         <div class="sweep-up">
-            <a href="#about"><img src="icones/slide-up.png" alt="Slide-Up-Icone"></a>
+            <a id="sweepButton" href="#about">
+                <img id="sweepIcon" src="icones/slide-up.png" alt="Scroll">
+            </a>
         </div>
     </header>
 
@@ -155,8 +157,21 @@
       window.scrollTo(0, 0);
     }
   });
+  const sweepButton = document.getElementById("sweepButton");
+  const sweepIcon = document.getElementById("sweepIcon");
+  const aboutSection = document.getElementById("about");
+
+  window.addEventListener("scroll", function () {
+    const aboutTop = aboutSection.offsetTop;
+
+    if (window.scrollY >= aboutTop - 120) {
+      sweepButton.href = "#home";
+      sweepIcon.classList.add("rotate");
+    } else {
+      sweepButton.href = "#about";
+      sweepIcon.classList.remove("rotate");
+    }
+  });
 </script>
-
-
 </body>
     </html>

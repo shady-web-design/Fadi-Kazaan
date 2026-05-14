@@ -44,5 +44,3 @@ export default async function handler(req, res) {
   return res.status(200).json({ success: true });
 }
 
-
-/*    re_aRVEMUPJ_4MmoJWWoeFUvfBmXwSrazM3z   */
