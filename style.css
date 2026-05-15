@@ -683,7 +683,11 @@ footer p {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--bg);
 }
+
 
 
 .menu-btn {
