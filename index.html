@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Private barber and hairstyling services by Fadi Kazaan in Dubai. Book premium grooming, haircut, and beard styling appointments.">
+
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,23 +14,23 @@
     <title>Fadi Kazaan</title>
 </head>
 <body>
-    <nav>
+    <nav >
         <div class="phone-bar">
           <a class="nav-booking-btn" href="./contact.html">Book Now</a>
           <button class="menu-btn">&#9776;</button>
         </div>
         <div class="nav-links">
-            <a href="./index.html#home">Home</a>
-            <a href="./index.html#about">About</a>
-            <a href="./index.html#services">Services</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
             <a href="./contact.html">Contact</a>
         </div>
     </nav>
     <header id="home">
         <div class="profile-top">
             <div class="hero-slides" aria-hidden="true">
-                <img class="hero-slide slide-one" src="img/bg/bg1.png" alt="Haircut 3">
-                <img class="hero-slide slide-two" src="img/Haircut 4.jpg" alt="Haircut 4">
+                <img class="hero-slide slide-one" src="img/bg/Haircut.jpg" alt="Haircut 3">
+                <img class="hero-slide slide-two" src="img/bg/Haircut 4.jpg" alt="Haircut 4">
                 <div class="hero-shade"></div>
             </div>
             
@@ -46,23 +48,33 @@
     <section id="about" class="about-content">
         <div class="about-text">
             <h2>Get To Know Me</h2>
-            <p>Hi, I’m **Fadi Kazaan**  a 29-year-old professional from Syria, currently based in Dubai. <br>
-
-                Confidence and self-expression have always been a major part of who I am. <br> Over the years, I discovered that personal style and appearance play a powerful role in how we present ourselves,
+            <div class="about-script">
                 
-                communicate our ideas, and leave lasting impressions. <br> That realization became the foundation of my passion and career. <br>
-
-                Today, my mission is to help people look and feel their absolute best. <br> As a professional barber and hairstylist, I focus on creating unique, personalized looks that reflect each client’s identity, 
+                <p>I’m Fadi Kazaan  a 29-year-old professional Barber and Hairstylist from Syria, My journey began in Syria in 2014,
+                    where my passion first took shape. It later continued in Lebanon and is now evolving in Dubai.</p>
                 
-                confidence, and individuality. <br>  Beyond styling, I see my role as an advisor — someone who helps clients enhance their image and stand out with authenticity and confidence.
-            </p>
+                <h3>
+                    Holder of the Guinness World Records title for “The Most Consecutive Beards Shaved/Trimmed in One Hour (Team)” 
+                    with 191 completed trims, delivering a private barber experience defined by precision, consistency, and attention to detail.
+                </h3>
+
+                <p>Confidence and self-expression have always been a major part of who I am. Over the years, I discovered that personal style and appearance play a powerful role in how we present ourselves,
+                    
+                    communicate our ideas, and leave lasting impressions. <br> That realization became the foundation of my passion and career.
+
+                    Today, my mission is to help people look and feel their absolute best. As a professional barber and hairstylist, I focus on creating unique, personalized looks that reflect each client’s identity, 
+                    
+                    confidence, and individuality. <br>  Beyond styling, I see my role as an advisor — someone who helps clients enhance their image and stand out with authenticity and confidence.
+                </p>
+
+            </div>
         </div>
-        <img src="img/Fadiii.jpeg" alt="Fadi Kazaan">
+        <img src="img/Fadiii.png" alt="Fadi Kazaan">
     </section>
 
-    <section class="main-container">
+    <section id="services" class="main-container">
             
-            <div id="services" class="main-header">
+            <div class="main-header">
                 <img src="img/Home service (2).png" alt="services">
             </div>
 
@@ -104,11 +116,13 @@
 
                 </div>
                 <div class="booking-link">
-                    <a href="./contact.html">Book Now</a>
+                    <a href="./contact.html">Book Your Appointment</a>
                 </div>
             </div>
+    </section>
 
-            <div id="contact" class="contact-content">
+    <section id="business-hours" class="business-section">
+            <div class="contact-content">
 
                 <div class="business-hours">
                     <h2>Business Hours</h2>
@@ -142,12 +156,11 @@
                 
                 
             </div>
+    </section>
 
             <footer>
                 <p>&copy; 2026 Fadi Kazaan. All rights reserved.</p>
             </footer>
-            
-    </section>
 
 
 
@@ -163,31 +176,57 @@
       window.scrollTo(0, 0);
     }
   });
-  const sweepButton = document.getElementById("sweepButton");
-  const sweepIcon = document.getElementById("sweepIcon");
-  const homeSection = document.getElementById("home");
+  
 
-  function updateSweepButton() {
-    const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
+const sweepButton = document.getElementById("sweepButton");
+const sweepIcon = document.getElementById("sweepIcon");
 
-    if (window.scrollY < homeBottom - 120) {
-      sweepButton.href = "#about";
-      sweepIcon.classList.remove("point-up");
-    } else {
-      sweepButton.href = "#home";
-      sweepIcon.classList.add("point-up");
-    }
+const aboutSection = document.getElementById("about");
+const servicesSection = document.getElementById("services");
+const businessHours = document.getElementById("business-hours");
+
+function updateSweepButton() {
+  const aboutTop = aboutSection.offsetTop;
+  const servicesTop = servicesSection.offsetTop;
+  const businessHoursTop = businessHours.offsetTop;
+
+  if (window.scrollY < aboutTop - 120) {
+    sweepButton.href = "#about";
+    sweepIcon.classList.remove("point-up");
+  } else if (window.scrollY < servicesTop - 120) {
+    sweepButton.href = "#services";
+    sweepIcon.classList.remove("point-up");
+  } else if (window.scrollY + window.innerHeight / 2 < businessHoursTop) {
+  sweepButton.href = "#business-hours";
+  sweepIcon.classList.remove("point-up");
+} else {
+  sweepButton.href = "#home";
+  sweepIcon.classList.add("point-up");
+}
+
+}
+
+updateSweepButton();
+window.addEventListener("scroll", updateSweepButton);
+
+sweepButton.addEventListener("click", function (event) {
+  if (sweepButton.getAttribute("href") === "#home") {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   }
+});
 
-  updateSweepButton();
-  window.addEventListener("scroll", updateSweepButton);
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav");
 
-  const menuBtn = document.querySelector(".menu-btn");
-  const nav = document.querySelector("nav");
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("show");
+});
 
-  menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("show");
-  });
 </script>
 </body>
     </html>

@@ -21,9 +21,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #000a04;
 
 }
+
+
+
 
 /* Global Styles */
 
@@ -33,11 +35,17 @@ html {
 }
 
 
-
-
 body {
     line-height: 1.6;
     overflow-x: hidden;
+    background-color: var(--bg);
+}
+
+.about-content,
+.main-container,
+.business-section,
+footer {
+  background-color: #000a04;
 }
 
 h2{
@@ -57,7 +65,7 @@ h3 {
 }
 
 p {
-  font-family: "Merienda", cursive;
+  font-family: "Work Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -222,13 +230,13 @@ header {
   height: 100%;
   z-index: 1;
   object-fit: cover;
-  opacity: 1;
+  opacity: 0;
   animation: heroFade 10s infinite;
   filter: saturate(0.92) contrast(1.04);
 }
 
 .slide-one {
-  object-position: 72% 42%;
+  object-position: 35% 20%;
 }
 
 .slide-two {
@@ -247,7 +255,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 100;
-    text-align: center;
+    text-align: left;
     background: transparent;
 }
 
@@ -263,7 +271,7 @@ header {
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease;
-  animation: sweepPulse 1.8s infinite;
+  animation: sweepPulse 1s infinite;
   background: transparent;
   transform: rotate(180deg);
 }
@@ -271,6 +279,7 @@ header {
 .sweep-up img.point-up {
   transform: rotate(0deg);
 }
+
 
 .sweep-up img:hover {
   transform: rotate(180deg) translateY(-10px);
@@ -282,7 +291,7 @@ header {
 
 @keyframes sweepPulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.7);
+        box-shadow: 0 0 0 0 rgb(255, 255, 255);
     }
 
     70% {
@@ -301,12 +310,18 @@ header {
 /* Content Section Styles */
 
 .about-content,
-.main-container{
+.main-container,
+.business-section {
   padding: 20px clamp(24px, 7vw, 100px);
-  min-height: 70vh;
   scroll-margin-top: 110px;
   z-index: 20;
   position: relative;
+}
+
+.about-content,
+.main-container {
+  min-height: 70vh;
+  padding-top: 80px;
 }
 
 
@@ -317,7 +332,7 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 200px;
     
 }
 
@@ -334,13 +349,25 @@ header {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    gap: 80px;
+    gap: 60px;
     color: #EBF4DD;
 }
 
 .about-text h2 {
-    font-size: 36px;
+    font-size: 46px;
     color: #5A7863;
+}
+
+.about-script {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-script h3 {
+    color: #a9b1a5;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 
@@ -351,9 +378,7 @@ header {
   display: grid;
   grid-template-areas:
     "main-header main-header"
-    "services-content services-content "
-    "contact-content contact-content"
-    "footer footer";
+    "services-content services-content ";
     grid-template-columns: 1fr 1fr;
     gap:50px;
 }
@@ -429,7 +454,6 @@ header {
 .services-content a:hover {
     color: var(--surface);
     font-size: 30px;
-    font-weight: 500;
     background: var(--muted);
     transform: translateY(-3px);
     animation: none;
@@ -447,6 +471,7 @@ header {
 
 /* Service Styles */
 .service {
+    background-color:#0a110c;
     width: min(100%, 500px);
     height: auto;
     padding: 20px ;
@@ -483,10 +508,6 @@ header {
 }
 
 .service p {
-    font-family: "Merienda", cursive;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
     font-size: 15px;
     background: transparent;
 }
@@ -610,13 +631,17 @@ header {
 /* footer */
 
 footer {
-    background: transparent;
+    background: #000a04;
     text-align: center;
     color: #8d9284;
     font-size: 14px;
     position: relative;
     z-index: 20;
     grid-area: footer;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer p {
@@ -778,7 +803,7 @@ footer p {
 
 .form-row input:focus,
 .form-row textarea:focus {
-  border-color: #c5a880;
+  border-color: var(--bg);
   background: rgba(255, 255, 255, 0.07);
     background: transparent;
 }
@@ -799,7 +824,7 @@ footer p {
 }
 
 .contact-form button:hover {
-    color: var(--surface);
+    color: var(--bg);
     font-size: 20px;
     font-weight: 500;
     background: var(--muted);
@@ -901,7 +926,8 @@ footer p {
     }
 
     .about-content,
-    .main-container {
+    .main-container,
+    .business-section {
         padding: 72px 48px;
         scroll-margin-top: 95px;
     }
@@ -972,9 +998,7 @@ footer p {
     .main-container {
         grid-template-areas:
             "main-header"
-            "services-content"
-            "contact-content"
-            "footer";
+            "services-content";
         grid-template-columns: 1fr;
         gap: 52px;
     }
@@ -1044,7 +1068,8 @@ footer p {
     }
 
     .about-content,
-    .main-container {
+    .main-container,
+    .business-section {
         padding: 64px 24px;
         min-height: auto;
         scroll-margin-top: 120px;
@@ -1224,13 +1249,17 @@ footer p {
 
     
     header {
-        min-height: 93vh;
+        min-height: 95vh;
     }
 
     .profile-top {
         inset: 0;
         height: 100%;
 
+    }
+
+    .hero-slides {
+        background-position: center;
     }
 
     .sweep-up{
@@ -1246,7 +1275,7 @@ footer p {
    
 
     .profile-img {
-        width: min(520px, 140vw);
+        width: min(550px, 140vw);
     }
 
     .logo {
@@ -1254,22 +1283,54 @@ footer p {
     }
 
     .about-content,
-    .main-container {
+    .main-container,
+    .business-section {
         padding-left: 18px;
         padding-right: 18px;
+        padding-bottom: 0px;
+    }
+
+
+    .services-container {
+        padding: 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     .service {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
         align-items: flex-start;
         gap: 14px;
+        border: var(--text);
+        border-width: 5px;
     }
 
     .service img {
-        width: 44px;
-        height: 44px;
+        width: 24px;
+        height: auto;
+        margin: 0;
     }
 
+    .service h3 {
+        font-size: 17px;
+    }
+
+    .service p {
+        font-size: 13px;
+    }
+
+
+    .booking-link a {
+        font-size: 20px;
+        padding: 10px 50px;
+        border-radius: 40px;
+    }
+
+    .business-section {
+        padding-top: 0px;
+
+    }
     .business-hours {
         gap: 30px;
         text-align: center;
@@ -1286,7 +1347,6 @@ footer p {
         display: block;
         padding: 12px 0;
         text-align: center;
-        border-bottom: 1px solid rgba(197, 168, 128, 0.18);
     }
 
     .business-hours td:last-child {
@@ -1362,7 +1422,7 @@ footer p {
 
     .contact-page .contact-form {
         width: min(100%, 520px);
-        padding: none;
+        padding: 0px;
     }
 
     .contact-page .social-media {
