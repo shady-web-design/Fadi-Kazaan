@@ -1012,8 +1012,8 @@ footer p {
    
 
     .profile-img {
-        width: min(650px, 160vw);
-        bottom: -40px ;
+        width: min(550px, 200vw);
+        bottom: -90px ;
     }
 
     .logo {
@@ -1166,10 +1166,10 @@ footer p {
         border: 1px solid var(--text);
         border-radius: var(--radius);
         color: var(--text);
-        font-size: 15px;
+        font-size: 20px;
         font-weight: 400;
         cursor: pointer;
-        padding: 0px 16px;
+        padding: 4px 22px;
     }
 
     .nav-booking-btn:hover {
@@ -1210,6 +1210,7 @@ footer p {
 
     .menu-btn {
         display: block;
+        font-size: 35px;
     }
 
 
@@ -1245,8 +1246,7 @@ footer p {
    
 
     .profile-img {
-        width: min(720px, 152vw);
-        bottom: -80px;
+        width: min(520px, 140vw);
     }
 
     .logo {
@@ -1438,45 +1438,40 @@ footer p {
 @media (max-width: 480px) {
     
     /* navbar phone edition */
-    nav {
+    .contact-page nav {
         padding: 10px 18px;
     }
-    .phone-bar {
+    .contact-page .phone-bar {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
         background: transparent;
    }
-     .nav-links a {
+     .contact-page .nav-links a {
         display: none;
         width: 100%;
         text-align: center;
         padding: 10px 0;
     }
 
-    .nav-booking-btn {
-        text-decoration: none;
-        background: transparent;
+    .contact-page .nav-booking-btn {
+        border: none;
         background: none;
-        border: 1px solid var(--text);
-        border-radius: var(--radius);
-        color: var(--text);
-        font-size: 15px;
-        font-weight: 400;
         cursor: pointer;
-        padding: 0px 16px;
+        padding: 3px 5px;
     }
 
-    .nav-booking-btn:hover {
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.2);
-        border-color: var(--text);
-        font-size: 18px;
-        font-weight: 500;
+    
+
+
+    .contact-page .nav-booking-btn img {
+        background: transparent;
+        width: 90px;
+        height: auto;
     }
     
-    nav.show {
+    .contact-page nav.show {
         flex-direction: column-reverse;
         align-items: stretch;
         flex-wrap: nowrap;
@@ -1486,30 +1481,31 @@ footer p {
 
     }
 
-    nav.show a {
+    .contact-page nav.show a {
         display: block;
     }
 
-    nav.show .nav-links {
+    .contact-page nav.show .nav-links {
         display: flex;
         flex-direction: column;
         gap: 10px;
   }
 
 
-    nav.show .phone-bar{
+    .contact-page nav.show .phone-bar{
         flex-wrap: wrap;
         flex-direction: column;
         align-content: center;
         gap: 20px;
     }
 
-    .menu-btn {
+    .contact-page .menu-btn {
         display: block;
+        font-size: 35px;
     }
 
 
-    .nav-booking-btn {
+    .contact-page .nav-booking-btn {
         display: block;
     }
 
