@@ -1553,9 +1553,10 @@ footer p {
 
 
     .contact-page nav.show .phone-bar{
+        display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        align-content: center;
+        align-items: center;
         gap: 20px;
     }
 
