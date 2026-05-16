@@ -333,11 +333,9 @@ header {
 /* about-content */
 
 .about-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 200px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 260px;
     
 }
 
@@ -377,41 +375,25 @@ header {
 /* main-content */
 
 
+
 .main-container {
-  display: grid;
-  grid-template-areas:
-    "main-header main-header"
-    "services-content services-content ";
-    grid-template-columns: 1fr 1fr;
-    gap:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:80px;
+    
 }
-
-
-
- 
-.main-header {
-    text-align: center;
-    grid-area: main-header;
-}
-
-
-.main-header img {
-    width: min(300px, 100%);
-    height: auto;
-    border-radius: 10px;
-    grid-area: main-header;
-}
-
-
-
-
 
 
 /* services-content */
 
 
 .services-content {
-    grid-area:  services-content; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    gap: 80px; 
 }
 
 
@@ -428,7 +410,6 @@ header {
     grid-column: 1;
     text-align: center;
     color: var(--luxuryGold);
-    margin-bottom: 40px;
 }
 
 
@@ -436,7 +417,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 80px 0px;
 }
 
 .services-content a {
@@ -527,11 +507,33 @@ header {
 
 
 
+
+
+ 
+.bottom-pic {
+    text-align: center;
+    grid-area: bottom-pic;
+}
+
+
+.bottom-pic img {
+    width: min(300px, 100%);
+    height: auto;
+    border-radius: 10px;
+    grid-area: main-header;
+}
+
+
+
+/* contact/Hours */
+
+
+
 .contact-content {
     display: grid;
-    grid-area: contact-content;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: business-hours none social-media ;
+    gap: 00px;
     padding-bottom: 80px;
 }
 
@@ -575,14 +577,14 @@ header {
 
 
 
-
+/* Media */
 
 
 .social-media {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     text-align: center;
     gap: 50px;
     background: transparent;
@@ -950,9 +952,11 @@ footer p {
     }
 
     .about-content {
+        display: flex;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
         min-height: auto;
+        gap: 20px;
     }
 
     .about-text {
@@ -1347,10 +1351,6 @@ footer p {
 
     }
 
-    .business-section {
-        padding-top: 0px;
-
-    }
     .business-hours {
         gap: 30px;
         text-align: center;
@@ -1371,6 +1371,15 @@ footer p {
 
     .business-hours td:last-child {
         text-align: center;
+    }
+
+
+    .about-content {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
     }
 
     footer {
@@ -1408,8 +1417,9 @@ footer p {
     position: fixed;
     inset: 0;
     background:
-        linear-gradient(rgba(0, 10, 4, 0.75), rgba(0, 10, 4, 1.75)),
-        url("img/bg/bg1.png");
+        linear-gradient(90deg, rgba(12, 13, 15, 0.96) 0%, rgba(12, 13, 15, 0.75) 45%, rgba(12, 13, 15, 0.35) 100%),
+        linear-gradient(0deg, rgba(12, 13, 15, 0.95) 0%, rgba(12, 13, 15, 0.25) 45%),
+                url("img/bg/bg1.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1506,6 +1516,9 @@ footer p {
         padding: 28px 18px;
     }
 
+    .contact-page .customer-entrance {
+        padding: 0 10px;
+    }
     .contact-page .customer-entrance h2 {
         font-size: 24px;
     }
